@@ -31,14 +31,10 @@ async def bootstrap(app: FastAPI):
     yprint("Setting up models.")
     app.state.models = [
         Model(
-            id=id,
+            id=f"model-{i}",
             created=utils.get_time(),
         )
-        for id in [
-            "gpt-3",
-            "gpt-4",
-            "gpt-5",
-        ]
+        for i in range(3)
     ]
 
     yield

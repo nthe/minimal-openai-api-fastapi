@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class Model(BaseModel):
     object_: Literal["model"] = Field(default="model", alias="object")
-    owned_by: str = Field(default="tietoevry")
+    owned_by: str = Field(default="evil-corp")
     id_: str = Field(alias="id")
     created: int
 
