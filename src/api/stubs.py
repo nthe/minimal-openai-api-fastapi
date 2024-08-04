@@ -19,6 +19,7 @@ async def echo_message_handler(request: models.CreateChatCompletionRequest):
         ],
         created=utils.get_time(),
         model=request.model,
+        system_fingerprint="",
         usage=models.CompletionUsage(
             prompt_tokens=0,
             completion_tokens=0,
@@ -46,6 +47,7 @@ async def echo_stream_handler(request: models.CreateChatCompletionRequest):
             ],
             created=utils.get_time(),
             model=request.model,
+            system_fingerprint="",
             usage=models.CompletionUsage(
                 prompt_tokens=0,
                 completion_tokens=0,

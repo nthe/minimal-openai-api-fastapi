@@ -113,6 +113,8 @@ class CreateChatCompletionResponse(BaseModel):
     choices: list[CreateChatCompletionChoiceResponse]
     created: int
     model: str
+    service_tier: Literal["scale", "default"] | None = None
+    system_fingerprint: str
     object_: Literal["chat.completion"] = Field(
         default="chat.completion",
         alias="object",
